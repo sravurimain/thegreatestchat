@@ -1,4 +1,3 @@
-"
 # GreatestChat
 
 ## Description
@@ -30,9 +29,9 @@ All this into a web app
 
 ## Learning
 - Week1: Client server model in Python
--- Create a user management (create, modify, delete, get, CRUD api)
--- Client should send messages to a given user, and server should save it
--- Client should receive messages from a given user, and server should save it
--- Be able to send and receive any type of message data type
--- Time based polling to receive messages from the server
+- Create a user management (create, modify, delete, get, CRUD api)
+- Client should send messages to a given user, and server should save it
+- Client should receive messages from a given user, and server should save it
+- Be able to send and receive any type of message data type
+- Time based polling to receive messages from the server
 "
