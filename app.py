@@ -99,3 +99,18 @@ def delete_user(user_id: UUID):
             raise HTTPException(status_code=404, detail="user_not_found")
         del _store[key]
     return None
+
+
+@app.post("/api/v1/users/{user_id}/password", status_code=status.HTTP_201_CREATED)
+def create_password(user_id: UUID, payload: dict):
+    key = str(user_id)
+    print(user_id)
+    print("cheese")
+    with _store_lock:
+        u = _store.get(key)
+        if not u:
+            raise HTTPException(status_code=404, detail="user_not_found")
+        # In a real application, you would hash the password and store it securely
+        u["password"] = payload.get("password")
+        _store[key] = u
+    return None

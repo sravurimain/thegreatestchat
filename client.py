@@ -45,6 +45,13 @@ def delete_user(user_id):
     return True
 
 
+def create_password(user_id, password):
+    payload = {"password": password}
+    r = requests.post(f"{BASE}/users/{user_id}/password", json=payload)
+    r.raise_for_status()
+    return r.status_code == 201
+
+
 if __name__ == "__main__":
     print("Creating users...")
     alice = create_user("alice", "alice@example.com", "Alice A.")
